@@ -1,6 +1,6 @@
 #include ".\inc\cns_str_utl.h"
 
-static int	is_in_set(const char *set, char c)
+static int	is_in_set(char c, const char *set)
 {
 	while (*set != '\0')
 	{
@@ -17,9 +17,9 @@ char	*cns_strtrim(const char *s, const char *set)
 	size_t	len = cns_strlen(s) - 1;
 	char	*new_str;
 	
-	while (is_in_set(set, s[start]))
+	while (is_in_set(s[start], set))
 		start++;
-	while (is_in_set(set, s[len]))
+	while (is_in_set(s[len], set))
 		len--;
 	len -= start;
 	
