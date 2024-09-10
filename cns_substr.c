@@ -1,5 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include ".\inc\cns_str_utl.h"
 
 char    *cns_substr(const char *str, unsigned int start, size_t len)
 {
@@ -19,14 +18,4 @@ char    *cns_substr(const char *str, unsigned int start, size_t len)
     }
     new_str[j] = '\0';
     return (new_str);
-}
-
-int main(void)
-{
-    char    str1[] = "This is a test string";
-    char    *str2;
-
-    str2 = cns_substr(str1, 11, 11);
-    printf("%s\n", str2);
-    return (0);
 }
