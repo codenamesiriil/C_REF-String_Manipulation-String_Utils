@@ -13,20 +13,16 @@ static int	is_in_set(const char *set, char c)
 
 char	*cns_strtrim(const char *s, const char *set)
 {
-	size_t			trim = 0;
-	size_t			len = cns_strlen(s);
-	unsigned int	start = 0;
-	unsigned int	i = 0;
-
-	while (is_in_set(set, s[i++]))
-		trim++;
-	start = (unsigned int)trim + 1;
-	while (i < len - 1)
-		i++;
-	while (is_in_set(set, s[i--]))
-		trim++;
-
-	char	*new_str;	
-	new_str = cns_substr(s, start, len - trim);
+	size_t	start = 0;
+	size_t	len = cns_strlen(s) - 1;
+	char	*new_str;
+	
+	while (is_in_set(set, s[start]))
+		start++;
+	while (is_in_set(set, s[len]))
+		len--;
+	len -= start;
+	
+	new_str = cns_substr(s, (start + 1), (len + 1));
 	return (new_str);
 }
