@@ -1,7 +1,7 @@
 NAME = cns_str_utl
 CC = gcc
 FLAGS = -Werror -Wextra -Wall -I./inc
-RM = del /Q
+RM = rm
 
 SOURCE = cns_split.c   \
 		 cns_strlen.c  \
@@ -23,7 +23,7 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME).exe
+	$(RM) $(NAME)
 
 re: fclean all
 
