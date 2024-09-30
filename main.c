@@ -3,7 +3,7 @@
 int	main(void)
 {
 	{
-		char str1[] = ".-..-.-.,.this is a string.,.-.,,,.-.,.--";
+		char str1[] = ".-..-.-.,.this is a different string.,.-.,,,.-.,.--";
 		char	*ptr;
 
 		printf("CNS_STRTRIM:\n");
